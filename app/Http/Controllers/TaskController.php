@@ -27,7 +27,9 @@ class TaskController extends Controller
     }
 
     /**
-     * Display a listing of the resource.
+     * @group Tasks
+     * Todos
+     * Lista todas as tarefas
      *
      * @return \Illuminate\Http\Response
      */
@@ -43,7 +45,10 @@ class TaskController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
+     * @group Tasks
+     * Salvar
+     * 
+     * Salva uma nova tarefa
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
@@ -85,7 +90,10 @@ class TaskController extends Controller
     }
 
     /**
-     * Display the specified resource.
+     * @group Tasks
+     * Único
+     * Exibe uma task específica
+     * 
      *
      * @param  \App\Task  $task
      * @return \Illuminate\Http\Response
@@ -100,7 +108,9 @@ class TaskController extends Controller
     }
 
     /**
-     * Update the specified resource in storage.
+     * @group Tasks
+     * Atualiza
+     * Atualiza uma task específica
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  \App\Task  $task
@@ -144,7 +154,9 @@ class TaskController extends Controller
     }
 
     /**
-     * Remove the specified resource from storage.
+     * @group Tasks
+     * Deletar
+     * Deleta uma task específica
      *
      * @param  \App\Task  $task
      * @return \Illuminate\Http\Response
