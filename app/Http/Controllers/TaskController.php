@@ -68,7 +68,7 @@ class TaskController extends Controller
                 'message' => 'Verifique os parâmetros de entrada'
             ];
             return response($result, 400);
-        }        
+        }
         
         // Salva Tarefa
         //---------------

@@ -55,8 +55,14 @@ class APIController extends Controller
     * @param RegistrationFormRequest $request
     * @return \Illuminate\Http\JsonResponse
     */
-    public function register(RegistrationFormRequest $request)
+    public function register(Request $request)
     {
+
+        return [
+            'name'     => 'required|string',
+            'email'    => 'required|email|unique:users',
+            'password' => 'required|string|min:6|max:10'
+        ];        
 
         $user = new User();
         $user->name     = $request->name;
@@ -164,17 +170,20 @@ class APIController extends Controller
      * 
      * @urlParam token string required Token do usuário. Example: eyJ0eXAiOiJKV1QiLCJhbGciOi...
      * 
+     * @bodyParam name string required description. Example: angelo
+     * 
      * @response 200
      * {
-     *      "id": 1,
-     *      "name": "nome_usuario",
-     *      "email": "email@email.com.br"
+     *     "id": 1,
+     *     "name": "nome_usuario",
+     *     "email": "email@email.com.br"
      * }
      * 
      * @response 401
      * {
-     *      "message": "Token not provided"
+     *     "message": "Token not provided"
      * }
+     * 
      *
      * @return \Illuminate\Http\JsonResponse
      */
